@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis — Open-Source Web Application Firewall</title>
+  <meta name="description" content="Aegis is a modular WAF built with Python and Docker. Protect your web apps from SQL Injection, XSS, and more — zero code changes required." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="logo-shield">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M18 3L5 9.5v9c0 8.28 5.54 16 13 17.5 7.46-1.5 13-9.22 13-17.5v-9L18 3z" fill="url(#lgA)" opacity="0.15" stroke="url(#lgA)" stroke-width="1.5"/><path d="M13 18l4 4 6-7" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lgA" x1="5" y1="3" x2="31" y2="36"><stop stop-color="#10B981"/><stop offset="1" stop-color="#059669"/></linearGradient></defs></svg>
+        </div>
+        <span class="logo-text">AEGIS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#how-it-works">Product WAF</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#architecture">Tech Stack</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions" id="navActions">
+        <a href="https://github.com/Krish-Korat/Aegis-WAF" target="_blank" rel="noopener" class="nav-btn nav-btn--github">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://github.com/Krish-Korat/Aegis-WAF#step-1--clone-the-repository" target="_blank" rel="noopener" class="nav-btn nav-btn--download">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Download</span>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section id="hero" class="hero">
+    <div class="bg-pattern bg-pattern--hex"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow"><span class="eyebrow-dot"></span> AEGIS, THE OPEN-SOURCE WEB APPLICATION FIREWALL (WAF)</p>
+        <h1 class="hero-headline">MAKE YOUR<br>WEB SERVICES<br><span class="hero-headline-accent">SECURE BY DEFAULT</span></h1>
+        <p class="hero-sub">Fool attackers and protect your web services with our open-source Web Application Firewall. Aegis acts as a shield in front of your web services — it blocks attacks before they can hit and guarantees confidentiality, integrity, and availability of your data.</p>
+        <div class="hero-ctas">
+          <a href="https://github.com/Krish-Korat/Aegis-WAF" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            READ THE DOCS
+          </a>
+          <a href="#how-it-works" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+            SEE HOW IT WORKS
+          </a>
+        </div>
+        <!-- Stats counters -->
+        <div class="hero-counters">
+          <div class="counter-item">
+            <div class="counter-row"><span class="counter-num" data-target="7">0</span></div>
+            <span class="counter-label">Attack Modules</span>
+          </div>
+          <div class="counter-item">
+            <div class="counter-row"><span class="counter-num" data-target="100">0</span><span class="counter-suffix">%</span></div>
+            <span class="counter-label">Open Source</span>
+          </div>
+          <div class="counter-item">
+            <div class="counter-row"><span class="counter-num" data-target="0">0</span></div>
+            <span class="counter-label">Code Changes</span>
+          </div>
+        </div>
+      </div>
+      <!-- Hero WAF Diagram — BunkerWeb-style infographic -->
+      <div class="hero-diagram" id="heroDiagram">
+        <img src="waf-diagram.png" alt="Aegis WAF Architecture Diagram" class="diagram-img" data-animate="blur-in" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TERMINAL DEMO ═══════ -->
+  <section class="section section--deep terminal-section">
+    <div class="bg-pattern bg-pattern--diag"></div>
+    <div class="container">
+      <div class="terminal-grid">
+        <div class="terminal-info" data-animate>
+          <span class="section-tag">QUICK START</span>
+          <h2 class="section-title">DEPLOY IN<br><span class="accent">3 COMMANDS</span></h2>
+          <p>Aegis works with <strong>any</strong> web application — Node.js, Python, PHP, Java, React, or static HTML. You don't change a single line of your code.</p>
+          <div class="deploy-badges">
+            <span class="deploy-badge">Docker</span>
+            <span class="deploy-badge">Python 3.8+</span>
+            <span class="deploy-badge">Any Framework</span>
+          </div>
+        </div>
+        <div class="terminal-window" data-animate>
+          <div class="terminal-header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aegis — terminal</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd" data-type="git clone https://github.com/Krish-Korat/Aegis-WAF.git"></span></div>
+            <div class="term-line term-output">Cloning into 'Aegis-WAF'... done.</div>
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd" data-type="cd Aegis-WAF"></span></div>
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd" data-type="python aegis.py start --target http://localhost:3000"></span></div>
+            <div class="term-line term-output term-success">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#10B981" stroke-width="2"/></svg>
+              Aegis WAF is now protecting your website on port 8000
+            </div>
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd" data-type='curl "http://localhost:8000/?q=&#39; UNION SELECT * --"'></span></div>
+            <div class="term-line term-output term-blocked">⛔ 403 Forbidden — SQL Injection detected and blocked</div>
+            <div class="term-line"><span class="term-prompt">$</span> <span class="term-cursor">█</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW IT WORKS ═══════ -->
+  <section id="how-it-works" class="section section--dark">
+    <div class="bg-pattern bg-pattern--circuit"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">HOW DOES A WAF WORK?</span>
+        <h2 class="section-title">HOW AEGIS <span class="accent">PROTECTS YOU</span></h2>
+        <p class="section-desc">Aegis operates as a reverse proxy, intercepting all incoming traffic. It analyzes each request against predefined security rules. Malicious requests are blocked — clean ones pass through.</p>
+      </div>
+      <div class="how-flow">
+        <div class="how-step" data-animate>
+          <div class="how-step-num">01</div>
+          <div class="how-step-icon"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>User Sends Request</h3>
+          <p>A user sends an HTTP/HTTPS request to your application.</p>
+        </div>
+        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="how-step" data-animate>
+          <div class="how-step-num">02</div>
+          <div class="how-step-icon icon-shield"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L8 12v12c0 11 7 21 16 23 9-2 16-12 16-23V12L24 4z" stroke="currentColor" stroke-width="2"/><path d="M18 24l4 4 8-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Aegis Intercepts</h3>
+          <p>Aegis reverse proxy intercepts the request before your backend.</p>
+        </div>
+        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="how-step" data-animate>
+          <div class="how-step-num">03</div>
+          <div class="how-step-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M18 6v36" stroke="currentColor" stroke-width="2"/><path d="M24 28l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Rule-Based Analysis</h3>
+          <p>The WAF engine scans for SQLi, XSS, SSTI, LFI, RFI, and CMDi patterns.</p>
+        </div>
+        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="how-step" data-animate>
+          <div class="how-step-num">04</div>
+          <div class="how-step-verdict">
+            <div class="verdict-blocked"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>403 Blocked</span></div>
+            <div class="verdict-allowed"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Forwarded</span></div>
+          </div>
+          <h3>Verdict</h3>
+          <p>Malicious? → <span class="mono text-red">403 Blocked</span>. Clean? → <span class="mono text-green">Forwarded</span>.</p>
+        </div>
+      </div>
+      <div class="arch-flow" data-animate>
+        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/></svg>User<br><span>(Browser)</span></div>
+        <div class="arch-flow-arrow">→</div>
+        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5"/></svg>Nginx<br><span>(Port 8000)</span></div>
+        <div class="arch-flow-arrow">→</div>
+        <div class="arch-flow-box arch-flow-box--accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5"/></svg>Aegis WAF<br><span>(FastAPI)</span></div>
+        <div class="arch-flow-arrow">→</div>
+        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>Your App<br><span>(Any Stack)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ KEY FEATURES ═══════ -->
+  <section id="features" class="section section--navy">
+    <div class="bg-pattern bg-pattern--cross"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PROTECTION MODULES</span>
+        <h2 class="section-title">KEY FEATURES <span class="accent">OF AEGIS WAF</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M8 14h32M8 14v20a4 4 0 004 4h24a4 4 0 004-4V14M16 24h.02M24 24h.02M32 24h.02" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>SQL Injection Detection</h3>
+          <p>Detect and block malicious SQL queries injected via input fields, preventing database takeover.</p>
+          <span class="feature-badge">SQLi</span>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M32 36l12-12-12-12M16 12L4 24l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 8L20 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Cross-Site Scripting (XSS)</h3>
+          <p>Stop malicious scripts from executing in users' browsers — prevent session hijacking and theft.</p>
+          <span class="feature-badge">XSS</span>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L4 14l20 10 20-10L24 4zM4 34l20 10 20-10M4 24l20 10 20-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Template Injection (SSTI)</h3>
+          <p>Prevent exploitation of server-side template engines like Jinja2 through crafted payloads.</p>
+          <span class="feature-badge">SSTI</span>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M28 4H12a4 4 0 00-4 4v32a4 4 0 004 4h24a4 4 0 004-4V16l-12-12z" stroke="currentColor" stroke-width="2"/><path d="M28 4v12h12M18 26h12M18 34h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>File Inclusion (LFI/RFI)</h3>
+          <p>Block unauthorized local and remote file access — prevent reading /etc/passwd or loading shells.</p>
+          <span class="feature-badge">LFI / RFI</span>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M14 16h.02M14 24h20M14 32h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Command Injection</h3>
+          <p>Detect OS-level attack patterns — shell commands, path traversals, system file enumeration.</p>
+          <span class="feature-badge">CMDi</span>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4v16l12 8M24 20L12 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>Rate Limiting</h3>
+          <p>Auto-block IPs sending too many requests — stops DDoS attacks and brute-force login attempts.</p>
+          <span class="feature-badge">DDoS</span>
+        </div>
+      </div>
+      <div class="key-features-list" data-animate>
+        <h3>MORE CAPABILITIES</h3>
+        <div class="kf-grid">
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div><strong>Real-time threat detection:</strong> pattern matching on every request</div></div>
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5"/></svg><div><strong>Intrusion detection:</strong> detect and block malicious activities</div></div>
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M9 3v18" stroke="currentColor" stroke-width="1.5"/></svg><div><strong>Rule-based filtering:</strong> customizable Python detection rules</div></div>
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Rate limiting:</strong> configurable per-IP request thresholds</div></div>
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5"/></svg><div><strong>Attack logging:</strong> with real-time <span class="mono">--follow</span> mode</div></div>
+          <div class="kf-item"><svg viewBox="0 0 24 24" fill="none"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Zero code changes:</strong> transparent proxy — your app stays untouched</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ OPEN SOURCE ═══════ -->
+  <section id="open-source" class="section section--dark">
+    <div class="bg-pattern bg-pattern--radial"></div>
+    <div class="container">
+      <div class="opensource-grid">
+        <div class="opensource-left" data-animate>
+          <span class="section-tag">OPEN-SOURCE PROJECT</span>
+          <h2 class="section-title">AN OPEN-SOURCE<br><span class="accent">SOLUTION</span></h2>
+          <p>Aegis is a modular Web Application Firewall built with Python and Docker. The source code is entirely accessible — we advocate for open security over security through obscurity.</p>
+          <ul class="opensource-list">
+            <li><strong>Total Transparency:</strong> accessible source code ensures maximum trust</li>
+            <li><strong>Active Community:</strong> global collaboration with developers worldwide</li>
+            <li><strong>Sovereignty:</strong> keep control and ownership of your data</li>
+            <li><strong>Customization:</strong> tailor rules to meet your project's needs</li>
+          </ul>
+          <div class="opensource-ctas">
+            <a href="https://github.com/Krish-Korat/Aegis-WAF" target="_blank" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GITHUB REPOSITORY
+            </a>
+          </div>
+        </div>
+        <div class="opensource-right">
+          <div class="waf-banner-card" data-animate>
+            <img src="waf-banner.png" alt="Open Source Web Application Firewall" class="waf-banner-img" />
+          </div>
+          <div class="vision-card" data-animate>
+            <div class="vision-card-header"><span class="vision-label">OUR VISION</span><div class="vision-icon-circle"><svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div></div>
+            <h3>Transparency</h3>
+            <p>Aegis places transparency at the core — allowing users access to clear, open code. Full visibility into every protective mechanism.</p>
+          </div>
+          <div class="vision-card" data-animate>
+            <div class="vision-card-header"><span class="vision-label">OUR MISSION</span><div class="vision-icon-circle"><svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <h3>Auditability</h3>
+            <p>Open access to code and configurations enables regular security audits — enhancing compliance and trust.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ARCHITECTURE ═══════ -->
+  <section id="architecture" class="section section--navy">
+    <div class="bg-pattern bg-pattern--scan"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TECHNOLOGY</span>
+        <h2 class="section-title">BUILT ON <span class="accent">PROVEN TECHNOLOGY</span></h2>
+        <p class="section-desc">Engineered with battle-tested open-source components — FastAPI for blazing-fast request analysis, Nginx for reverse proxying, and Docker for one-command deployment.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="tech-label">Reverse Proxy</div><div class="tech-name">Nginx</div></div>
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tech-label">WAF Engine</div><div class="tech-name">FastAPI</div></div>
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tech-label">Language</div><div class="tech-name">Python</div></div>
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg></div><div class="tech-label">Containerization</div><div class="tech-name">Docker</div></div>
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="tech-label">Infrastructure</div><div class="tech-name">Linux</div></div>
+        <div class="tech-item" data-animate><div class="tech-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h.01M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="tech-label">CLI Tool</div><div class="tech-name">aegis.py</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PRICING ═══════ -->
+  <section id="pricing" class="section section--dark">
+    <div class="bg-pattern bg-pattern--dots"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PLANS</span>
+        <h2 class="section-title">CHOOSE YOUR <span class="accent">PROTECTION PLAN</span></h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card" data-animate>
+          <div class="pricing-header"><span class="pricing-tier">STARTER</span><div class="pricing-price">Free</div><p>Perfect for personal projects and testing.</p></div>
+          <ul class="pricing-list"><li>1 domain</li><li>All attack detection modules</li><li>Basic rate limiting</li><li>Attack logs (last 7 days)</li><li>Community support</li></ul>
+          <button class="btn btn-outline btn-plan" data-plan="Starter (Free)">Get Started Free</button>
+        </div>
+        <div class="pricing-card pricing-card--featured" data-animate>
+          <div class="pricing-badge">RECOMMENDED</div>
+          <div class="pricing-header"><span class="pricing-tier">PRO</span><div class="pricing-price pricing-price--soon">Coming Soon</div><p>For growing businesses needing full protection.</p></div>
+          <ul class="pricing-list"><li>Up to 5 domains</li><li>Advanced rate limiting & brute force</li><li>Custom rule creation</li><li>Real-time dashboard (30 days)</li><li>Email alerts on attacks</li><li>Priority support</li></ul>
+          <button class="btn btn-primary btn-plan" data-plan="Pro (Coming Soon)">Notify Me</button>
+        </div>
+        <div class="pricing-card" data-animate>
+          <div class="pricing-header"><span class="pricing-tier">ENTERPRISE</span><div class="pricing-price">Custom</div><p>For mission-critical applications.</p></div>
+          <ul class="pricing-list"><li>Unlimited domains</li><li>Dedicated infrastructure</li><li>SLA-backed uptime</li><li>API for SIEM integration</li><li>24/7 dedicated support</li></ul>
+          <button class="btn btn-outline btn-plan" data-plan="Enterprise (Custom)">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
+  <section id="contact" class="section section--navy">
+
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-animate>
+          <span class="section-tag">GET IN TOUCH</span>
+          <h2 class="section-title">CONTACT THE<br><span class="accent">AEGIS TEAM</span></h2>
+          <p>Whether you're looking for support, more information, or just want to connect, the Aegis Team is ready to assist. Let's secure the web together!</p>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>contact@aegiswaf.io</span>
+          </div>
+        </div>
+        <div class="contact-form-wrap" data-animate>
+          <h3>SEND US A MESSAGE</h3>
+          <p class="contact-form-sub">Feel free to send us any questions, feedback or suggestions you might have.</p>
+          <!-- Netlify Forms: add data-netlify="true" when deployed -->
+          <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden-field" style="display:none"><input name="bot-field" /></p>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Name *" required id="cName" minlength="2" />
+                <span class="form-error" id="errName"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" name="company" placeholder="Company" id="cCompany" />
+                <span class="form-error"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone" id="cPhone" pattern="[0-9+\-\s()]{7,15}" />
+                <span class="form-error" id="errPhone"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email *" required id="cEmail" />
+                <span class="form-error" id="errEmail"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" placeholder="Subject *" required id="cSubject" minlength="3" />
+              <span class="form-error" id="errSubject"></span>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Message *" rows="5" required id="cMessage" minlength="10"></textarea>
+              <span class="form-error" id="errMessage"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contactSubmit">SEND MESSAGE</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">
+            <div class="logo-shield"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3L5 9.5v9c0 8.28 5.54 16 13 17.5 7.46-1.5 13-9.22 13-17.5v-9L18 3z" fill="#10B981" opacity="0.15" stroke="#10B981" stroke-width="1.5"/><path d="M13 18l4 4 6-7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="logo-text">AEGIS</span>
+          </a>
+          <p>Your First Line of Defense — Shield Your Web App Without Touching a Line of Code</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="#hero">Home</a><a href="#features">Features</a><a href="#how-it-works">How It Works</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+          <a href="https://github.com/Krish-Korat/Aegis-WAF" target="_blank">GitHub</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Aegis WAF. Built for the open web.</p></div>
+    </div>
+  </footer>
+
+  <!-- ═══════ MODAL ═══════ -->
+  <div class="modal-overlay" id="planModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="modal-header">
+        <svg width="40" height="40" viewBox="0 0 36 36" fill="none"><path d="M18 3L5 9.5v9c0 8.28 5.54 16 13 17.5 7.46-1.5 13-9.22 13-17.5v-9L18 3z" stroke="#10B981" stroke-width="1.5" fill="#10B981" opacity="0.15"/><path d="M13 18l4 4 6-7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h2>Integrate Aegis with Your Website</h2>
+        <p class="modal-plan" id="modalPlanName"></p>
+      </div>
+      <form class="modal-form" id="setupForm">
+        <input type="url" placeholder="https://yoursite.com" required id="setupDomain" />
+        <select required id="setupServer"><option value="" disabled selected>Select your server type</option><option>Nginx</option><option>Apache</option><option>Other</option></select>
+        <label class="checkbox-label"><input type="checkbox" required id="setupTerms" /> I agree to the <a href="#">Terms of Service</a></label>
+        <button type="submit" class="btn btn-primary btn-full">Proceed to Setup</button>
+        <p class="modal-note">Our team will configure Aegis as a reverse proxy in front of your application within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
