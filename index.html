@@ -85,7 +85,7 @@
   </section>
 
   <!-- ═══════ TERMINAL DEMO ═══════ -->
-  <section class="section section--deep terminal-section">
+  <section class="section section--dark terminal-section">
     <div class="bg-pattern bg-pattern--diag"></div>
     <div class="container">
       <div class="terminal-grid">
@@ -123,54 +123,80 @@
   </section>
 
   <!-- ═══════ HOW IT WORKS ═══════ -->
-  <section id="how-it-works" class="section section--dark">
-    <div class="bg-pattern bg-pattern--circuit"></div>
+  <section id="how-it-works" class="section section--deep">
+    <div class="bg-pattern bg-pattern--grid"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">HOW DOES A WAF WORK?</span>
-        <h2 class="section-title">HOW AEGIS <span class="accent">PROTECTS YOU</span></h2>
-        <p class="section-desc">Aegis operates as a reverse proxy, intercepting all incoming traffic. It analyzes each request against predefined security rules. Malicious requests are blocked — clean ones pass through.</p>
+        <span class="section-tag">ARCHITECTURE</span>
+        <h2 class="section-title">THE AEGIS <span class="accent">PIPELINE</span></h2>
+        <p class="section-desc">Aegis sits seamlessly in front of your web application, acting as a fortified gateway. Every request is parsed and scored against threat modules in real-time before reaching your backend.</p>
       </div>
-      <div class="how-flow">
-        <div class="how-step" data-animate>
-          <div class="how-step-num">01</div>
-          <div class="how-step-icon"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>User Sends Request</h3>
-          <p>A user sends an HTTP/HTTPS request to your application.</p>
-        </div>
-        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="how-step" data-animate>
-          <div class="how-step-num">02</div>
-          <div class="how-step-icon icon-shield"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L8 12v12c0 11 7 21 16 23 9-2 16-12 16-23V12L24 4z" stroke="currentColor" stroke-width="2"/><path d="M18 24l4 4 8-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Aegis Intercepts</h3>
-          <p>Aegis reverse proxy intercepts the request before your backend.</p>
-        </div>
-        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="how-step" data-animate>
-          <div class="how-step-num">03</div>
-          <div class="how-step-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/><path d="M6 18h36M18 6v36" stroke="currentColor" stroke-width="2"/><path d="M24 28l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Rule-Based Analysis</h3>
-          <p>The WAF engine scans for SQLi, XSS, SSTI, LFI, RFI, and CMDi patterns.</p>
-        </div>
-        <div class="how-arrow"><svg viewBox="0 0 48 24"><path d="M0 12h40M34 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="how-step" data-animate>
-          <div class="how-step-num">04</div>
-          <div class="how-step-verdict">
-            <div class="verdict-blocked"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>403 Blocked</span></div>
-            <div class="verdict-allowed"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Forwarded</span></div>
+
+      <div class="pipeline-wrapper" data-animate>
+        <div class="pipeline-track"></div>
+        
+        <div class="pipeline-nodes">
+          <!-- Step 1: Request -->
+          <div class="pipe-node">
+            <div class="pipe-icon-wrap">
+              <svg class="pipe-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
+            </div>
+            <div class="pipe-content">
+              <span class="pipe-mono">01. INITIATION</span>
+              <h3>Client Request</h3>
+              <p>User sends HTTP/S traffic to your public domain.</p>
+            </div>
           </div>
-          <h3>Verdict</h3>
-          <p>Malicious? → <span class="mono text-red">403 Blocked</span>. Clean? → <span class="mono text-green">Forwarded</span>.</p>
+
+          <!-- Step 2: Proxy -->
+          <div class="pipe-node">
+            <div class="pipe-icon-wrap">
+              <svg class="pipe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+            </div>
+            <div class="pipe-content">
+              <span class="pipe-mono">02. INTERCEPTION</span>
+              <h3>Reverse Proxy</h3>
+              <p>Nginx receives traffic, handles SSL, and buffers payloads.</p>
+            </div>
+          </div>
+
+          <!-- Step 3: Engine (Active) -->
+          <div class="pipe-node pipe-node--active">
+            <div class="pipe-icon-wrap">
+              <div class="pipe-ping"></div>
+              <svg class="pipe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="pipe-content">
+              <span class="pipe-mono text-green">03. INSPECTION</span>
+              <h3>Aegis Engine</h3>
+              <p>Signatures & behaviors are scanned strictly for OWASP threats.</p>
+            </div>
+          </div>
+          
+          <!-- Step 4: Decisions -->
+          <div class="pipe-decision">
+            <div class="decision-branch decision-branch--block">
+              <div class="branch-line"></div>
+              <div class="branch-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                <div>
+                  <h4>403 Blocked</h4>
+                  <span>Malicious Payload</span>
+                </div>
+              </div>
+            </div>
+            <div class="decision-branch decision-branch--allow">
+              <div class="branch-line"></div>
+              <div class="branch-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
+                <div>
+                  <h4>App Server</h4>
+                  <span>Clean Traffic</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="arch-flow" data-animate>
-        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/></svg>User<br><span>(Browser)</span></div>
-        <div class="arch-flow-arrow">→</div>
-        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5"/></svg>Nginx<br><span>(Port 8000)</span></div>
-        <div class="arch-flow-arrow">→</div>
-        <div class="arch-flow-box arch-flow-box--accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5"/></svg>Aegis WAF<br><span>(FastAPI)</span></div>
-        <div class="arch-flow-arrow">→</div>
-        <div class="arch-flow-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>Your App<br><span>(Any Stack)</span></div>
       </div>
     </div>
   </section>

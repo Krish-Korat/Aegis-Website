@@ -39,7 +39,7 @@ const Terminal = () => {
   }, [started, lines]);
 
   return (
-    <section className="section section--deep terminal-section">
+    <section className="section section--dark terminal-section">
       <div className="bg-pattern bg-pattern--diag"></div>
       <div className="container">
         <div className="terminal-grid">
